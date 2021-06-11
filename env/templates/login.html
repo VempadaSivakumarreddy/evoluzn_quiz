@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for( 'static',filename='styles1.css')}}" />
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Evoluzn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                {% if session.logged_in %}
+                <li class="nav-item ">
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="/register" class="nav-link">Register</a></li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+  
+  <div class="wrapper">
+    <div class="title">
+      LogIn Form
+    </div>
+    <form action="{{url_for('login')}}" method="post">
+    <div class="form">
+         
+        <div class="inputfield">
+          <label>Email</label>
+          <input type="text" class="input" name="email" >
+       </div>
+       
+       <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input" name="password" required>
+       </div>  
+      
+       
+      <div class="inputfield">
+        <input type="submit" value="LogIn" class="btn">
+      </div>
+      <div class="signup-link">Not a member? <a href="{{url_for('register')}}">Signup now</a></br></div>
+       
+      </div>
+
+    </div>
+</div>	
+</form>
+</body>
+          
+       
+</html>
+

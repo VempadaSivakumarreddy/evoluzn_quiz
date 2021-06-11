@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Evoluzn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              {% if session['logged in'] == True %}
+                <li class="nav-item ">
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="/register" class="nav-link">Register</a></li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+
+  <link rel="stylesheet" type= "text/css" href="{{ url_for( 'static',filename='styles1.css')}}" />
+</head>
+<body>
+  
+
+  <form action="{{url_for('register')}}" method="post">
+  <div class="wrapper">
+    <div class="title">
+      Registration Form
+    </div>
+    <div class="form">
+       <div class="inputfield">
+          <label>Name</label>
+          <input type="text" class="input" name="username">
+       </div>  
+        <div class="inputfield">
+          <label>Email</label>
+          <input type="text" class="input" name="email" required>
+       </div>
+       <div class="inputfield">
+        <label>Mobile</label>
+        <input type="number" class="input" name="mobile" required>
+     </div>
+     <div class="inputfield">
+      <label>Qualification</label>
+      <input type="text" class="input" name="qualification" required>
+   </div>
+   <div class="inputfield">
+    <label>course</label>
+    <input type="text" class="input" name="course" required>
+ </div>
+ <div class="inputfield">
+  <label>Year Of Passout</label>
+  <input type="text" class="input" name="passout" required>
+</div>         
+       <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input" name="password">
+       </div>  
+      
+        
+      
+        
+      
+     
+      <div class="inputfield">
+        <input type="submit" value="Register" class="btn">
+      </div>
+    </div>
+    <div class="signup-link">Already have account? <a href="{{url_for('login')}}">LogIn</a></br></div>
+  </div>
+
+    </div>
+</div>	
+</form>
+</body>

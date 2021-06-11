@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP VERIFY</title>
+</head>
+<body>
+<form action="{{url_for('otp_confirmation')}}" method="post">
+    <h1>One time password has been sent to the mail id. please check </h1>
+    <p>by <b>Evoluzn</b></p>
+    <input type="hidden" name="email" value="{{email}}" ></br>
+   
+    Enter OTP: <input type="text" name="OTP">
+    
+    <input type="submit" value="Submit"></br>
+    <a href="{{ url_for('send_email_otp') }}">Resend Email Otp</a>
+</form>
+</body>
+</html>

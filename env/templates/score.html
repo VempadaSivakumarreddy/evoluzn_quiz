@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span class="u-center-text">You've completed {{ sets }} sets.</span>
+    <h1>Your score is {{c}}</h1>
+    <img src="" alt="">
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Score</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Evoluzn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <!-- {% if session.logged_in %}
+                <li class="nav-item ">
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="/register" class="nav-link">Register</a></li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+                {% endif %} -->
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- style.css -->
+    <link rel="stylesheet" type= "text/css" href="{{ url_for( 'static',filename='style2.css')}}" />
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+           <i class="fas fa-award award_icon"></i>
+           
+           <h2 class="username">well done! <span class="name"></span></h2>
+           <h3 class="userpoints">Your Score is {{c}} <span class=""></span></h3>
+         <!-- <p class="usertime"> Time taken <span class="time_taken"></span></p> -->
+         
+        </div>
+    </div>
+ 
+
+    <script src="https://kit.fontawesome.com/d56261bbb9.js"></script>
+  
+</body>
+</html>

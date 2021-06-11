@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Evoluzn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <!-- {% if session['logged in'] == True %}
+                <li class="nav-item ">
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="/register" class="nav-link">Register</a></li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+                {% endif %} -->
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+    <form action="/main">
+    <h1>Welcome to Evoluzn Mock Interview Test</h1></br>
+    <h2>Here you have 15 Questions with the time of 10minutes  Each question carries 1 mark</h2></br>
+    <h2>to attend test for General <a href="{{url_for('quiz', qusestionSubj = 'General')}}">Click here</a> </h2>
+    <h2>to attend test for Math <a href="{{url_for('quiz', qusestionSubj = 'Math')}}">Click here</a> </h2>
+    <h2>to attend test for Social <a href="{{url_for('quiz', qusestionSubj = 'General')}}">Click here</a> </h2>
+
+</form>
+</body>
+</html>
